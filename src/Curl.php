@@ -2,9 +2,10 @@
 
 namespace AlxDorosenco\CurlPhp;
 
+use AlxDorosenco\CurlPhp\Builder\IBuilder;
 use AlxDorosenco\CurlPhp\Traits\TCurlFunctions;
 
-class Curl
+class Curl implements ICurl
 {
     use TCurlFunctions;
 
@@ -22,12 +23,12 @@ class Curl
     }
 
     /**
-     * @param CurlBuilder $builder
+     * @param IBuilder $builder
      * @return void
      */
-    public function build(CurlBuilder $builder): void
+    public function build(IBuilder $builder): void
     {
-        foreach ($builder->getOpts() as $option => $value) {
+        foreach ($builder->toArray() as $option => $value) {
             curl_setopt($this->handle, $option, $value);
         }
     }
