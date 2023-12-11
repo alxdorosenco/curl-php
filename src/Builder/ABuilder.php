@@ -2,8 +2,6 @@
 
 namespace AlxDorosenco\CurlPhp\Builder;
 
-use AlxDorosenco\CurlPhp\BuilderOpts;
-
 abstract class ABuilder
 {
     /**
