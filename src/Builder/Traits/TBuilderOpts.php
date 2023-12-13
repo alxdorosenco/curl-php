@@ -727,30 +727,647 @@ trait TBuilderOpts
         return $this;
     }
 
-    public function setUrl($value): IBuilder
+    public function setAbstractUnixSocket(string $value): IBuilder
     {
-        $this->opts[CURLOPT_URL] = $value;
+        $this->opts[CURLOPT_ABSTRACT_UNIX_SOCKET] = $value;
 
         return $this;
     }
 
-    public function setCustomRequest($value): IBuilder
+    public function setAltsvc(string $value): IBuilder
+    {
+        $this->opts[CURLOPT_ALTSVC] = $value;
+
+        return $this;
+    }
+
+    public function setAltsvcCtrl(string $value): IBuilder
+    {
+        $this->opts[CURLOPT_ALTSVC_CTRL] = $value;
+
+        return $this;
+    }
+
+    public function setAwsStgV4(string $value): IBuilder
+    {
+        $this->opts[CURLOPT_AWS_SIGV4] = $value;
+
+        return $this;
+    }
+
+    public function setCatInfo(string $value): IBuilder
+    {
+        $this->opts[CURLOPT_CAINFO] = $value;
+
+        return $this;
+    }
+
+    public function setCatInfoBlob(string $value): IBuilder
+    {
+        $this->opts[CURLOPT_CAINFO_BLOB] = $value;
+
+        return $this;
+    }
+
+    public function setCapath(string $value): IBuilder
+    {
+        $this->opts[CURLOPT_CAPATH] = $value;
+
+        return $this;
+    }
+
+    public function setCookie(string $value): IBuilder
+    {
+        $this->opts[CURLOPT_COOKIE] = $value;
+
+        return $this;
+    }
+
+    public function setCookieFile(string $value): IBuilder
+    {
+        $this->opts[CURLOPT_COOKIEFILE] = $value;
+
+        return $this;
+    }
+
+    public function setCookieJar(string $value): IBuilder
+    {
+        $this->opts[CURLOPT_COOKIEJAR] = $value;
+
+        return $this;
+    }
+
+    public function setCookieList(string $value): IBuilder
+    {
+        $this->opts[CURLOPT_COOKIELIST] = $value;
+
+        return $this;
+    }
+
+    public function setCustomRequest(string $value): IBuilder
     {
         $this->opts[CURLOPT_CUSTOMREQUEST] = $value;
 
         return $this;
     }
 
-    public function setPostFields($value): IBuilder
+    public function setDefaultProtocol(string $value): IBuilder
+    {
+        $this->opts[CURLOPT_DEFAULT_PROTOCOL] = $value;
+
+        return $this;
+    }
+
+    public function setDnsInterface(string $value): IBuilder
+    {
+        $this->opts[CURLOPT_DNS_INTERFACE] = $value;
+
+        return $this;
+    }
+
+    public function setDnsLocalIp4(string $value): IBuilder
+    {
+        $this->opts[CURLOPT_DNS_LOCAL_IP4] = $value;
+
+        return $this;
+    }
+
+    public function setDnsLocalIp6(string $value): IBuilder
+    {
+        $this->opts[CURLOPT_DNS_LOCAL_IP6] = $value;
+
+        return $this;
+    }
+
+    public function setEgdSocket(string $value): IBuilder
+    {
+        $this->opts[CURLOPT_EGDSOCKET] = $value;
+
+        return $this;
+    }
+
+    public function setEncoding(string $value): IBuilder
+    {
+        $this->opts[CURLOPT_ENCODING] = $value;
+
+        return $this;
+    }
+
+    public function setFtpPort(string $value): IBuilder
+    {
+        $this->opts[CURLOPT_FTPPORT] = $value;
+
+        return $this;
+    }
+
+    public function setHsts(string $value): IBuilder
+    {
+        $this->opts[CURLOPT_HSTS] = $value;
+
+        return $this;
+    }
+
+    public function setHstsCtrl(string $value): IBuilder
+    {
+        $this->opts[CURLOPT_HSTS_CTRL] = $value;
+
+        return $this;
+    }
+
+    public function setInterface(string $value): IBuilder
+    {
+        $this->opts[CURLOPT_INTERFACE] = $value;
+
+        return $this;
+    }
+
+    public function setKeyPassWd(string $value): IBuilder
+    {
+        $this->opts[CURLOPT_KEYPASSWD] = $value;
+
+        return $this;
+    }
+
+    public function setKrb4Level(string $value): IBuilder
+    {
+        $this->opts[CURLOPT_KRB4LEVEL] = $value;
+
+        return $this;
+    }
+
+    public function setLoginOptions(string $value): IBuilder
+    {
+        $this->opts[CURLOPT_LOGIN_OPTIONS] = $value;
+
+        return $this;
+    }
+
+    public function setPinnedPublicKey(string $value): IBuilder
+    {
+        $this->opts[CURLOPT_PINNEDPUBLICKEY] = $value;
+
+        return $this;
+    }
+
+    public function setPostFields(array $value): IBuilder
     {
         $this->opts[CURLOPT_POSTFIELDS] = $value;
 
         return $this;
     }
 
-    public function setHttpHeader($value = []): IBuilder
+    public function setPrivate($value): IBuilder
+    {
+        $this->opts[CURLOPT_PRIVATE] = $value;
+
+        return $this;
+    }
+
+    public function setPreProxy($value): IBuilder
+    {
+        $this->opts[CURLOPT_PRE_PROXY] = $value;
+
+        return $this;
+    }
+
+    public function setProxy($value): IBuilder
+    {
+        $this->opts[CURLOPT_PROXY] = $value;
+
+        return $this;
+    }
+
+    public function setProxyServiceName(string $value): IBuilder
+    {
+        $this->opts[CURLOPT_PROXY_SERVICE_NAME] = $value;
+
+        return $this;
+    }
+
+    public function setProxyCaInfo(string $value): IBuilder
+    {
+        $this->opts[CURLOPT_PROXY_CAINFO] = $value;
+
+        return $this;
+    }
+
+    public function setProxyCaInfoBlob(string $value): IBuilder
+    {
+        $this->opts[CURLOPT_PROXY_CAINFO_BLOB] = $value;
+
+        return $this;
+    }
+
+    public function setProxyCaPath(string $value): IBuilder
+    {
+        $this->opts[CURLOPT_PROXY_CAPATH] = $value;
+
+        return $this;
+    }
+
+    public function setProxyCrlFile(string $value): IBuilder
+    {
+        $this->opts[CURLOPT_PROXY_CRLFILE] = $value;
+
+        return $this;
+    }
+
+    public function setProxyKeyPassWd(string $value): IBuilder
+    {
+        $this->opts[CURLOPT_PROXY_KEYPASSWD] = $value;
+
+        return $this;
+    }
+
+    public function setProxyKeyPinnedPublicKey(string $value): IBuilder
+    {
+        $this->opts[CURLOPT_PROXY_PINNEDPUBLICKEY] = $value;
+
+        return $this;
+    }
+
+    public function setProxySslCert(string $value): IBuilder
+    {
+        $this->opts[CURLOPT_PROXY_SSLCERT] = $value;
+
+        return $this;
+    }
+
+    public function setProxySslCertType(string $value): IBuilder
+    {
+        $this->opts[CURLOPT_PROXY_SSLCERTTYPE] = $value;
+
+        return $this;
+    }
+
+    public function setProxySslCipherList(string $value): IBuilder
+    {
+        $this->opts[CURLOPT_PROXY_SSL_CIPHER_LIST] = $value;
+
+        return $this;
+    }
+
+    public function setProxyTls13Ciphers(string $value): IBuilder
+    {
+        $this->opts[CURLOPT_PROXY_TLS13_CIPHERS] = $value;
+
+        return $this;
+    }
+
+    public function setProxySslKey(string $value): IBuilder
+    {
+        $this->opts[CURLOPT_PROXY_SSLKEY] = $value;
+
+        return $this;
+    }
+
+    public function setProxySslKeyType(string $value): IBuilder
+    {
+        $this->opts[CURLOPT_PROXY_SSLKEYTYPE] = $value;
+
+        return $this;
+    }
+
+    public function setProxyTlsAuthPassword(string $value): IBuilder
+    {
+        $this->opts[CURLOPT_PROXY_TLSAUTH_PASSWORD] = $value;
+
+        return $this;
+    }
+
+    public function setProxyTlsAuthType(string $value): IBuilder
+    {
+        $this->opts[CURLOPT_PROXY_TLSAUTH_TYPE] = $value;
+
+        return $this;
+    }
+
+    public function setProxyTlsAuthUsername(string $value): IBuilder
+    {
+        $this->opts[CURLOPT_PROXY_TLSAUTH_USERNAME] = $value;
+
+        return $this;
+    }
+
+    public function setProxyUserPwd(string $value): IBuilder
+    {
+        $this->opts[CURLOPT_PROXYUSERPWD] = $value;
+
+        return $this;
+    }
+
+    public function setRandomFile(string $value): IBuilder
+    {
+        $this->opts[CURLOPT_RANDOM_FILE] = $value;
+
+        return $this;
+    }
+
+    public function setRange(string $value): IBuilder
+    {
+        $this->opts[CURLOPT_RANGE] = $value;
+
+        return $this;
+    }
+
+    public function setReferer(string $value): IBuilder
+    {
+        $this->opts[CURLOPT_REFERER] = $value;
+
+        return $this;
+    }
+
+    public function setSaslAuthZid(string $value): IBuilder
+    {
+        $this->opts[CURLOPT_SASL_AUTHZID] = $value;
+
+        return $this;
+    }
+
+    public function setServiceName(string $value): IBuilder
+    {
+        $this->opts[CURLOPT_SERVICE_NAME] = $value;
+
+        return $this;
+    }
+
+    public function setSshHostPublicKeyMd5(string $value): IBuilder
+    {
+        $this->opts[CURLOPT_SSH_HOST_PUBLIC_KEY_MD5] = $value;
+
+        return $this;
+    }
+
+    public function setSshHostPublicKeySha256(string $value): IBuilder
+    {
+        $this->opts[CURLOPT_SSH_HOST_PUBLIC_KEY_SHA256] = $value;
+
+        return $this;
+    }
+
+    public function setSshPublicKeyFile(string $value): IBuilder
+    {
+        $this->opts[CURLOPT_SSH_PUBLIC_KEYFILE] = $value;
+
+        return $this;
+    }
+
+    public function setSshPrivateKeyFile(string $value): IBuilder
+    {
+        $this->opts[CURLOPT_SSH_PRIVATE_KEYFILE] = $value;
+
+        return $this;
+    }
+
+    public function setSslCipherList(string $value): IBuilder
+    {
+        $this->opts[CURLOPT_SSL_CIPHER_LIST] = $value;
+
+        return $this;
+    }
+
+    public function setSslEcCurves(string $value): IBuilder
+    {
+        $this->opts[CURLOPT_SSL_EC_CURVES] = $value;
+
+        return $this;
+    }
+
+    public function setSslCert(string $value): IBuilder
+    {
+        $this->opts[CURLOPT_SSLCERT] = $value;
+
+        return $this;
+    }
+
+    public function setSslCertPassWd(string $value): IBuilder
+    {
+        $this->opts[CURLOPT_SSLCERTPASSWD] = $value;
+
+        return $this;
+    }
+
+    public function setSslCertType(string $value): IBuilder
+    {
+        $this->opts[CURLOPT_SSLCERTTYPE] = $value;
+
+        return $this;
+    }
+
+    public function setSslEngine(string $value): IBuilder
+    {
+        $this->opts[CURLOPT_SSLENGINE] = $value;
+
+        return $this;
+    }
+
+    public function setSslEngineDefault(string $value): IBuilder
+    {
+        $this->opts[CURLOPT_SSLENGINE_DEFAULT] = $value;
+
+        return $this;
+    }
+
+    public function setSslKey(string $value): IBuilder
+    {
+        $this->opts[CURLOPT_SSLKEY] = $value;
+
+        return $this;
+    }
+
+    public function setSslKeyPassWd(string $value): IBuilder
+    {
+        $this->opts[CURLOPT_SSLKEYPASSWD] = $value;
+
+        return $this;
+    }
+
+    public function setSslKeyType(string $value): IBuilder
+    {
+        $this->opts[CURLOPT_SSLKEYTYPE] = $value;
+
+        return $this;
+    }
+
+    public function setTls13Ciphers(string $value): IBuilder
+    {
+        $this->opts[CURLOPT_TLS13_CIPHERS] = $value;
+
+        return $this;
+    }
+
+    public function setUnixSocketPath(string $value): IBuilder
+    {
+        $this->opts[CURLOPT_UNIX_SOCKET_PATH] = $value;
+
+        return $this;
+    }
+
+    public function setUrl(string $value): IBuilder
+    {
+        $this->opts[CURLOPT_URL] = $value;
+
+        return $this;
+    }
+
+    public function setUserAgent(string $value): IBuilder
+    {
+        $this->opts[CURLOPT_USERAGENT] = $value;
+
+        return $this;
+    }
+
+    public function setUserName(string $value): IBuilder
+    {
+        $this->opts[CURLOPT_USERNAME] = $value;
+
+        return $this;
+    }
+
+    public function setPassword(string $value): IBuilder
+    {
+        $this->opts[CURLOPT_PASSWORD] = $value;
+
+        return $this;
+    }
+
+    public function setUserPwd(string $value): IBuilder
+    {
+        $this->opts[CURLOPT_USERPWD] = $value;
+
+        return $this;
+    }
+
+    public function setXoAuth2Bearer(string $value): IBuilder
+    {
+        $this->opts[CURLOPT_XOAUTH2_BEARER] = $value;
+
+        return $this;
+    }
+
+    public function setConnectTo(array $value): IBuilder
+    {
+        $this->opts[CURLOPT_CONNECT_TO] = $value;
+
+        return $this;
+    }
+
+    public function setHttp200Aliases(array $value): IBuilder
+    {
+        $this->opts[CURLOPT_HTTP200ALIASES] = $value;
+
+        return $this;
+    }
+
+    public function setHttpHeader(array $value = []): IBuilder
     {
         $this->opts[CURLOPT_HTTPHEADER] = $value;
+
+        return $this;
+    }
+
+    public function setPostQuote(array $value): IBuilder
+    {
+        $this->opts[CURLOPT_POSTQUOTE] = $value;
+
+        return $this;
+    }
+
+    public function setProxyHeader(array $value = []): IBuilder
+    {
+        $this->opts[CURLOPT_PROXYHEADER] = $value;
+
+        return $this;
+    }
+
+    public function setQuote(array $value): IBuilder
+    {
+        $this->opts[CURLOPT_QUOTE] = $value;
+
+        return $this;
+    }
+
+    public function setResolve(array $value): IBuilder
+    {
+        $this->opts[CURLOPT_RESOLVE] = $value;
+
+        return $this;
+    }
+
+    public function setFile($value): IBuilder
+    {
+        $this->opts[CURLOPT_FILE] = $value;
+
+        return $this;
+    }
+
+    public function setInFile($value): IBuilder
+    {
+        $this->opts[CURLOPT_INFILE] = $value;
+
+        return $this;
+    }
+
+    public function setStdErr($value): IBuilder
+    {
+        $this->opts[CURLOPT_STDERR] = $value;
+
+        return $this;
+    }
+
+    public function setWriteHeader($value): IBuilder
+    {
+        $this->opts[CURLOPT_WRITEHEADER] = $value;
+
+        return $this;
+    }
+
+    public function setHeaderFunction(\Closure $value): IBuilder
+    {
+        $this->opts[CURLOPT_HEADERFUNCTION] = $value;
+
+        return $this;
+    }
+
+    public function setPassWdFunction(\Closure $value): IBuilder
+    {
+        $this->opts[CURLOPT_PASSWDFUNCTION] = $value;
+
+        return $this;
+    }
+
+    public function setProgressFunction(\Closure $value): IBuilder
+    {
+        $this->opts[CURLOPT_PROGRESSFUNCTION] = $value;
+
+        return $this;
+    }
+
+    public function setReadFunction(\Closure $value): IBuilder
+    {
+        $this->opts[CURLOPT_READFUNCTION] = $value;
+
+        return $this;
+    }
+
+    public function setWriteFunction(\Closure $value): IBuilder
+    {
+        $this->opts[CURLOPT_WRITEFUNCTION] = $value;
+
+        return $this;
+    }
+
+    // Available on the php 8.2
+    //public function setXFerInfoFunction(\Closure $value): IBuilder
+    //{
+    //    $this->opts[CURLOPT_XFERINFOFUNCTION] = $value;
+    //
+    //    return $this;
+    //}
+
+    public function setShare(\CurlShareHandle $value): IBuilder
+    {
+        $this->opts[CURLOPT_SHARE] = $value;
 
         return $this;
     }
