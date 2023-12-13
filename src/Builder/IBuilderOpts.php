@@ -2,9 +2,9 @@
 
 namespace AlxDorosenco\CurlPhp\Builder;
 
-interface IBuilderOpts
+interface IBuilderOpts extends IBuilder
 {
-    public function setAutoReferer(bool $value = true): ABuilder;
+    public function setAutoReferer(bool $value = true): IBuilder;
 
-    public function setCookieSession(bool $value = true): ABuilder;
+    public function setCookieSession(bool $value = true): IBuilder;
 }

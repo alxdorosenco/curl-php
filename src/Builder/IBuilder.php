@@ -14,5 +14,5 @@ interface IBuilder
      * @param $value
      * @return $this
      */
-    public function setOpt(int $option, $value): self;
+    public function setOpt(int $option, $value): IBuilder;
 }

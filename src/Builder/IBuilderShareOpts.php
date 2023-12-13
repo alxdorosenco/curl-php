@@ -2,7 +2,7 @@
 
 namespace AlxDorosenco\CurlPhp\Builder;
 
-interface IBuilderShareOpts
+interface IBuilderShareOpts extends IBuilder
 {
 
 }

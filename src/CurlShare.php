@@ -2,7 +2,7 @@
 
 namespace AlxDorosenco\CurlPhp;
 
-use AlxDorosenco\CurlPhp\Builder\ABuilder;
+use AlxDorosenco\CurlPhp\Builder\IBuilder;
 use AlxDorosenco\CurlPhp\Traits\TCurlShareFunctions;
 
 class CurlShare implements ICurl
@@ -20,10 +20,10 @@ class CurlShare implements ICurl
     }
 
     /**
-     * @param ABuilder $builder
+     * @param IBuilder $builder
      * @return void
      */
-    public function build(ABuilder $builder): void
+    public function build(IBuilder $builder): void
     {
         foreach ($builder->toArray() as $option => $value) {
             curl_share_setopt($this->shareHandle, $option, $value);
