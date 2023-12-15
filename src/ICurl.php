@@ -2,13 +2,13 @@
 
 namespace AlxDorosenco\CurlPhp;
 
-use AlxDorosenco\CurlPhp\Builder\IBuilder;
+use AlxDorosenco\CurlPhp\Builder\ABuilder;
 
 interface ICurl
 {
     /**
-     * @param IBuilder $builder
+     * @param ABuilder $builder
      * @return void
      */
-    public function build(IBuilder $builder): void;
+    public function build(ABuilder $builder): void;
 }

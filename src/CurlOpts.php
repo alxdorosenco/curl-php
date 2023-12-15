@@ -2,41 +2,33 @@
 
 namespace AlxDorosenco\CurlPhp;
 
-use AlxDorosenco\CurlPhp\Builder\IBuilderMultiOpts;
-use AlxDorosenco\CurlPhp\Builder\IBuilderOpts;
-use AlxDorosenco\CurlPhp\Builder\IBuilderShareOpts;
-use AlxDorosenco\CurlPhp\Builder\Traits\TBuilderMultiOpts;
-use AlxDorosenco\CurlPhp\Builder\Traits\TBuilderOpts;
-use AlxDorosenco\CurlPhp\Builder\Traits\TBuilderShareOpts;
+use AlxDorosenco\CurlPhp\Builder\BuilderMultiOpts;
+use AlxDorosenco\CurlPhp\Builder\BuilderOpts;
+use AlxDorosenco\CurlPhp\Builder\BuilderShareOpts;
 
-class CurlOpts implements IBuilderOpts, IBuilderMultiOpts, IBuilderShareOpts
+class CurlOpts
 {
-    use TBuilderOpts;
-    use TBuilderMultiOpts;
-    use TBuilderShareOpts;
-
     /**
-     * @var array
+     * @return BuilderOpts
      */
-    protected array $opts = [];
-
-    /**
-     * @return array
-     */
-    public function toArray(): array
+    public static function instance(): BuilderOpts
     {
-        return $this->opts;
+        return new BuilderOpts();
     }
 
     /**
-     * @param int $option
-     * @param $value
-     * @return $this
+     * @return BuilderMultiOpts
      */
-    public function setOpt(int $option, $value): static
+    public static function multi(): BuilderMultiOpts
     {
-        $this->opts[$option] = $value;
+        return new BuilderMultiOpts();
+    }
 
-        return $this;
+    /**
+     * @return BuilderShareOpts
+     */
+    public static function share(): BuilderShareOpts
+    {
+        return new BuilderShareOpts();
     }
 }
