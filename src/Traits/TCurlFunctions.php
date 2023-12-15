@@ -38,7 +38,7 @@ trait TCurlFunctions
         return curl_exec($this->handle);
     }
 
-    public function getInfo(?int $option)
+    public function getInfo(?int $option = null)
     {
         return curl_getinfo($this->handle, $option);
     }

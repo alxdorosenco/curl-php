@@ -7,14 +7,14 @@ namespace AlxDorosenco\CurlPhp\Builder;
  */
 class BuilderShareOpts extends ABuilder
 {
-    public function setShare(int $value): ABuilder
+    public function setShare(int $value): static
     {
         $this->opts[CURLSHOPT_SHARE] = $value;
 
         return $this;
     }
 
-    public function setUnShare(int $value): ABuilder
+    public function setUnShare(int $value): static
     {
         $this->opts[CURLSHOPT_UNSHARE] = $value;
 

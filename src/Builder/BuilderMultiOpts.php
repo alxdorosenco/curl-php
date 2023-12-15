@@ -7,63 +7,64 @@ namespace AlxDorosenco\CurlPhp\Builder;
  */
 class BuilderMultiOpts extends ABuilder
 {
-    public function setPipelining(int $value): ABuilder
+    public function setPipelining(int $value): static
     {
         $this->opts[CURLMOPT_PIPELINING] = $value;
 
         return $this;
     }
 
-    public function setMaxConnects(int $value): ABuilder
+    public function setMaxConnects(int $value): static
     {
         $this->opts[CURLMOPT_MAXCONNECTS] = $value;
 
         return $this;
     }
 
-    public function setChunkLengthPenaltySize(int $value): ABuilder
+    public function setChunkLengthPenaltySize(int $value): static
     {
         $this->opts[CURLMOPT_CHUNK_LENGTH_PENALTY_SIZE] = $value;
 
         return $this;
     }
 
-    public function setContentLengthPenaltySize(int $value): ABuilder
+    public function setContentLengthPenaltySize(int $value): static
     {
         $this->opts[CURLMOPT_CONTENT_LENGTH_PENALTY_SIZE] = $value;
 
         return $this;
     }
 
-    public function setMaxConcurrentStreams(int $value): ABuilder
-    {
-        $this->opts[CURLMOPT_MAX_CONCURRENT_STREAMS] = $value;
+    // Is available from php 8.2
+    //public function setMaxConcurrentStreams(int $value): static
+    //{
+    //    $this->opts[CURLMOPT_MAX_CONCURRENT_STREAMS] = $value;
+    //
+    //    return $this;
+    //}
 
-        return $this;
-    }
-
-    public function setMaxHostConnections(int $value): ABuilder
+    public function setMaxHostConnections(int $value): static
     {
         $this->opts[CURLMOPT_MAX_HOST_CONNECTIONS] = $value;
 
         return $this;
     }
 
-    public function setMaxPipelineLength(int $value): ABuilder
+    public function setMaxPipelineLength(int $value): static
     {
         $this->opts[CURLMOPT_MAX_PIPELINE_LENGTH] = $value;
 
         return $this;
     }
 
-    public function setMaxTotalConnections(int $value): ABuilder
+    public function setMaxTotalConnections(int $value): static
     {
         $this->opts[CURLMOPT_MAX_TOTAL_CONNECTIONS] = $value;
 
         return $this;
     }
 
-    public function setPushFunction(\Closure $value): ABuilder
+    public function setPushFunction(\Closure $value): static
     {
         $this->opts[CURLMOPT_PUSHFUNCTION] = $value;
 
