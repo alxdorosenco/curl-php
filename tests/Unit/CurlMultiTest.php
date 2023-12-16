@@ -2,19 +2,19 @@
 
 namespace AlxDorosenco\CurlPhp\Tests\Unit;
 
-use AlxDorosenco\CurlPhp\Curl;
+use AlxDorosenco\CurlPhp\CurlMulti;
 use AlxDorosenco\CurlPhp\CurlOpts;
 use PHPUnit\Framework\TestCase;
 
-class CurlTest extends TestCase
+class CurlMultiTest extends TestCase
 {
     public function testBuildMethod()
     {
         $this->expectNotToPerformAssertions();
 
-        $curl = new Curl();
+        $curl = new CurlMulti();
         $curl->build(
-            CurlOpts::instance()
+            CurlOpts::multi()
         );
     }
 }

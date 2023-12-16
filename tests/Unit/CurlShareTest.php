@@ -2,19 +2,19 @@
 
 namespace AlxDorosenco\CurlPhp\Tests\Unit;
 
-use AlxDorosenco\CurlPhp\Curl;
 use AlxDorosenco\CurlPhp\CurlOpts;
+use AlxDorosenco\CurlPhp\CurlShare;
 use PHPUnit\Framework\TestCase;
 
-class CurlTest extends TestCase
+class CurlShareTest extends TestCase
 {
     public function testBuildMethod()
     {
         $this->expectNotToPerformAssertions();
 
-        $curl = new Curl();
+        $curl = new CurlShare();
         $curl->build(
-            CurlOpts::instance()
+            CurlOpts::share()
         );
     }
 }
