@@ -35,13 +35,12 @@ class BuilderMultiOpts extends ABuilder
         return $this;
     }
 
-    // Is available from php 8.2
-    //public function setMaxConcurrentStreams(int $value): static
-    //{
-    //    $this->opts[CURLMOPT_MAX_CONCURRENT_STREAMS] = $value;
-    //
-    //    return $this;
-    //}
+    public function setMaxConcurrentStreams(int $value = 100): static
+    {
+        $this->opts[CURLMOPT_MAX_CONCURRENT_STREAMS] = $value;
+
+        return $this;
+    }
 
     public function setMaxHostConnections(int $value): static
     {

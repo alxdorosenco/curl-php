@@ -448,37 +448,33 @@ class BuilderOpts extends ABuilder
         return $this;
     }
 
-    // Available on the php 8.2
-    //public function setMailRcptAllLowFails(int $value): static
-    //{
-    //    $this->opts[CURLOPT_MAIL_RCPT_ALLLOWFAILS] = $value;
-    //
-    //    return $this;
-    //}
+    public function setMailRcptAllLowFails(int $value): static
+    {
+        $this->opts[CURLOPT_MAIL_RCPT_ALLLOWFAILS] = $value;
 
-    // Available on the php 8.2
-    //public function setMaxAgeConn(int $value): static
-    //{
-    //    $this->opts[CURLOPT_MAXAGE_CONN] = $value;
-    //
-    //    return $this;
-    //}
+        return $this;
+    }
 
-    // Available on the php 8.2
-    //public function setMaxFileSizeLarge(int $value): static
-    //{
-    //    $this->opts[CURLOPT_MAXFILESIZE_LARGE] = $value;
-    //
-    //    return $this;
-    //}
+    public function setMaxAgeConn(int $value): static
+    {
+        $this->opts[CURLOPT_MAXAGE_CONN] = $value;
 
-    // Available on the php 8.2
-    //public function setMaxLifeTimeConn(int $value): static
-    //{
-    //    $this->opts[CURLOPT_MAXLIFETIME_CONN] = $value;
-    //
-    //    return $this;
-    //}
+        return $this;
+    }
+
+    public function setMaxFileSizeLarge(int $value): static
+    {
+        $this->opts[CURLOPT_MAXFILESIZE_LARGE] = $value;
+
+        return $this;
+    }
+
+    public function setMaxLifeTimeConn(int $value): static
+    {
+        $this->opts[CURLOPT_MAXLIFETIME_CONN] = $value;
+
+        return $this;
+    }
 
     public function setMaxConnects(int $value): static
     {
@@ -662,21 +658,19 @@ class BuilderOpts extends ABuilder
         return $this;
     }
 
-    // Available on the php 8.2
-    //public function setUpkeepIntervalMs(int $value): static
-    //{
-    //    $this->opts[CURLOPT_UPKEEP_INTERVAL_MS] = $value;
-    //
-    //    return $this;
-    //}
+    public function setUpkeepIntervalMs(int $value): static
+    {
+        $this->opts[CURLOPT_UPKEEP_INTERVAL_MS] = $value;
 
-    // Available on the php 8.2
-    //public function setUploadBufferSize(int $value): static
-    //{
-    //    $this->opts[CURLOPT_UPLOAD_BUFFERSIZE] = $value;
-    //
-    //    return $this;
-    //}
+        return $this;
+    }
+
+    public function setUploadBufferSize(int $value): static
+    {
+        $this->opts[CURLOPT_UPLOAD_BUFFERSIZE] = $value;
+
+        return $this;
+    }
 
     public function setMaxReCvSpeedLarge(int $value): static
     {
@@ -720,29 +714,26 @@ class BuilderOpts extends ABuilder
         return $this;
     }
 
-    // Available on the php 8.2
-    //public function setAltsvc(string $value): static
-    //{
-    //    $this->opts[CURLOPT_ALTSVC] = $value;
-    //
-    //    return $this;
-    //}
+    public function setAltsvc(string $value): static
+    {
+        $this->opts[CURLOPT_ALTSVC] = $value;
 
-    // Available on the php 8.2
-    //public function setAltsvcCtrl(string $value): static
-    //{
-    //    $this->opts[CURLOPT_ALTSVC_CTRL] = $value;
-    //
-    //    return $this;
-    //}
+        return $this;
+    }
 
-    // Available on the php 8.2
-    //public function setAwsStgV4(string $value): static
-    //{
-    //    $this->opts[CURLOPT_AWS_SIGV4] = $value;
-    //
-    //    return $this;
-    //}
+    public function setAltsvcCtrl(string $value): static
+    {
+        $this->opts[CURLOPT_ALTSVC_CTRL] = $value;
+
+        return $this;
+    }
+
+    public function setAwsStgV4(string $value): static
+    {
+        $this->opts[CURLOPT_AWS_SIGV4] = $value;
+
+        return $this;
+    }
 
     public function setCatInfo(string $value): static
     {
@@ -751,13 +742,12 @@ class BuilderOpts extends ABuilder
         return $this;
     }
 
-    // Available on the php 8.2
-    //public function setCatInfoBlob(string $value): static
-    //{
-    //    $this->opts[CURLOPT_CAINFO_BLOB] = $value;
-    //
-    //    return $this;
-    //}
+    public function setCatInfoBlob(string $value): static
+    {
+        $this->opts[CURLOPT_CAINFO_BLOB] = $value;
+
+        return $this;
+    }
 
     public function setCapath(string $value): static
     {
@@ -850,21 +840,19 @@ class BuilderOpts extends ABuilder
         return $this;
     }
 
-    // Available on the php 8.2
-    //public function setHsts(string $value): static
-    //{
-    //    $this->opts[CURLOPT_HSTS] = $value;
-    //
-    //    return $this;
-    //}
+    public function setHsts(string $value): static
+    {
+        $this->opts[CURLOPT_HSTS] = $value;
 
-    // Available on the php 8.2
-    //public function setHstsCtrl(string $value): static
-    //{
-    //    $this->opts[CURLOPT_HSTS_CTRL] = $value;
-    //
-    //    return $this;
-    //}
+        return $this;
+    }
+
+    public function setHstsCtrl(string $value): static
+    {
+        $this->opts[CURLOPT_HSTS_CTRL] = $value;
+
+        return $this;
+    }
 
     public function setInterface(string $value): static
     {
@@ -943,13 +931,12 @@ class BuilderOpts extends ABuilder
         return $this;
     }
 
-    // Available on the php 8.2
-    //public function setProxyCaInfoBlob(string $value): static
-    //{
-    //    $this->opts[CURLOPT_PROXY_CAINFO_BLOB] = $value;
-    //
-    //    return $this;
-    //}
+    public function setProxyCaInfoBlob(string $value): static
+    {
+        $this->opts[CURLOPT_PROXY_CAINFO_BLOB] = $value;
+
+        return $this;
+    }
 
     public function setProxyCaPath(string $value): static
     {
@@ -1070,13 +1057,12 @@ class BuilderOpts extends ABuilder
         return $this;
     }
 
-    // Available on the php 8.2
-    //public function setSaslAuthZid(string $value): static
-    //{
-    //    $this->opts[CURLOPT_SASL_AUTHZID] = $value;
-    //
-    //    return $this;
-    //}
+    public function setSaslAuthZid(string $value): static
+    {
+        $this->opts[CURLOPT_SASL_AUTHZID] = $value;
+
+        return $this;
+    }
 
     public function setServiceName(string $value): static
     {
@@ -1092,13 +1078,12 @@ class BuilderOpts extends ABuilder
         return $this;
     }
 
-    // Available on the php 8.2
-    //public function setSshHostPublicKeySha256(string $value): static
-    //{
-    //    $this->opts[CURLOPT_SSH_HOST_PUBLIC_KEY_SHA256] = $value;
-    //
-    //    return $this;
-    //}
+    public function setSshHostPublicKeySha256(string $value): static
+    {
+        $this->opts[CURLOPT_SSH_HOST_PUBLIC_KEY_SHA256] = $value;
+
+        return $this;
+    }
 
     public function setSshPublicKeyFile(string $value): static
     {
@@ -1121,13 +1106,12 @@ class BuilderOpts extends ABuilder
         return $this;
     }
 
-    // Available on the php 8.2
-    //public function setSslEcCurves(string $value): static
-    //{
-    //    $this->opts[CURLOPT_SSL_EC_CURVES] = $value;
-    //
-    //    return $this;
-    //}
+    public function setSslEcCurves(string $value): static
+    {
+        $this->opts[CURLOPT_SSL_EC_CURVES] = $value;
+
+        return $this;
+    }
 
     public function setSslCert(string $value): static
     {
@@ -1346,13 +1330,12 @@ class BuilderOpts extends ABuilder
         return $this;
     }
 
-    // Available on the php 8.2
-    //public function setXFerInfoFunction(\Closure $value): static
-    //{
-    //    $this->opts[CURLOPT_XFERINFOFUNCTION] = $value;
-    //
-    //    return $this;
-    //}
+    public function setXFerInfoFunction(\Closure $value): static
+    {
+        $this->opts[CURLOPT_XFERINFOFUNCTION] = $value;
+
+        return $this;
+    }
 
     public function setShare(\CurlShareHandle $value): static
     {

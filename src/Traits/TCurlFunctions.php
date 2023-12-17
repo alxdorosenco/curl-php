@@ -78,11 +78,10 @@ trait TCurlFunctions
         return curl_unescape($this->handle, $string);
     }
 
-    // Only from PHP 8.2
-    //public function upkeep(): bool
-    //{
-    //    return curl_upkeep($this->handle);
-    //}
+    public function upkeep(): bool
+    {
+        return curl_upkeep($this->handle);
+    }
 
     public function version(): bool|array
     {
