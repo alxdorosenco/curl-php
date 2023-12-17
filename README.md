@@ -21,7 +21,7 @@ For PHP versions less 8.2
 composer require alxdorosenco/curl-php 8.0.*
 ```
 
-## Example
+## Example №1
 
 Standard code
 
@@ -77,6 +77,131 @@ $out = $curl->exec();
 $code = $curl->getInfo(CURLINFO_HTTP_CODE);
 
 $curl->close();
+```
+
+## Example №2
+
+Standard code
+
+```php
+$ch1 = curl_init();
+$ch2 = curl_init();
+
+curl_setopt($ch1, CURLOPT_URL, "https://example.com");
+curl_setopt($ch1, CURLOPT_HEADER, 0);
+curl_setopt($ch2, CURLOPT_URL, "https://example.com");
+curl_setopt($ch2, CURLOPT_HEADER, 0);
+
+$mh = curl_multi_init();
+
+curl_multi_add_handle($mh,$ch1);
+curl_multi_add_handle($mh,$ch2);
+
+do {
+    $status = curl_multi_exec($mh, $active);
+    if ($active) {
+        curl_multi_select($mh);
+    }
+} while ($active && $status == CURLM_OK);
+
+curl_multi_remove_handle($mh, $ch1);
+curl_multi_remove_handle($mh, $ch2);
+curl_multi_close($mh);
+```
+
+Package code
+```php
+require __DIR__ . '/vendor/autoload.php';
+use AlxDorosenco\CurlPhp\Curl;
+use AlxDorosenco\CurlPhp\CurlMulti;
+use AlxDorosenco\CurlPhp\CurlOpts;
+
+$ch1 = new Curl();
+$ch2 = new Curl();
+
+$ch1->build(
+    CurlOpts::instance()
+        ->setUrl('https://example.com')
+        ->setHeader(false)
+);
+
+$ch2->build(
+    CurlOpts::instance()
+        ->setUrl('https://example.com')
+        ->setHeader(false)
+);
+
+$mh = new CurlMulti();
+
+$mh->addHandle($ch1);
+$mh->addHandle($ch2);
+
+do {
+    $status = $mh->exec($active);
+    if ($active) {
+        $mh->select($mh);
+    }
+} while ($active && $status == CURLM_OK);
+
+$mh->removeHandle($ch1);
+$mh->removeHandle($ch2);
+$mh->close();
+```
+
+## Example №3
+
+Standard code
+
+```php
+$sh = curl_share_init();
+curl_share_setopt($sh, CURLSHOPT_SHARE, CURL_LOCK_DATA_COOKIE);
+
+$ch1 = curl_init("http://example.com/");
+curl_setopt($ch1, CURLOPT_SHARE, $sh);
+
+curl_exec($ch1);
+
+$ch2 = curl_init("http://php.net/");
+curl_setopt($ch2, CURLOPT_SHARE, $sh);
+
+curl_exec($ch2);
+
+curl_share_close($sh);
+
+curl_close($ch1);
+curl_close($ch2);
+```
+
+Package code
+```php
+require __DIR__ . '/vendor/autoload.php';
+use AlxDorosenco\CurlPhp\Curl;
+use AlxDorosenco\CurlPhp\CurlShare;
+use AlxDorosenco\CurlPhp\CurlOpts;
+
+$sh = new CurlShare();
+$sh->build(
+    CurlOpts::share()->setShare(CURLSHOPT_SHARE, CURL_LOCK_DATA_COOKIE)
+);
+
+$ch1 = new Curl("http://example.com/");
+$ch1->build(
+    CurlOpts::instance()->setShare(CURLOPT_SHARE, $sh)
+);
+
+$ch1->exec();
+
+$ch2 = new Curl("http://php.net/");
+$ch2->build(
+    CurlOpts::instance()->setShare(CURLOPT_SHARE, $sh)
+);
+
+$ch2->exec();
+
+$sh->close();
+
+$ch1->close();
+$ch2->close();
 ```
 
 ## License
