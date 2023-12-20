@@ -889,7 +889,7 @@ class BuilderOpts extends ABuilder
         return $this;
     }
 
-    public function setPostFields(array $value): static
+    public function setPostFields(string|array $value): static
     {
         $this->opts[CURLOPT_POSTFIELDS] = $value;
 
