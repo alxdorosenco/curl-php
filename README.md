@@ -15,11 +15,6 @@ From PHP version 8.0
 ```
 composer require alxdorosenco/curl-php
 ```
-For PHP versions less 8.2
-
-```
-composer require alxdorosenco/curl-php 8.0.*
-```
 
 ## Example №1
 
